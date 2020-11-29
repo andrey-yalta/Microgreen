@@ -1,0 +1,134 @@
+{"microgreen":[
+  {
+    "id": 0,
+    "imageUrl": "https://i.ibb.co/Lttsd66/basilik-small.jpg",
+    "name": "Базилик",
+    "types": [
+      0,
+      1
+    ],
+    "price": 100,
+    "category": 0,
+    "rating": 4
+  },
+  {
+    "id": 1,
+    "imageUrl": "https://i.ibb.co/hf5XZTG/daikon-small.jpg",
+    "name": "Дайкон",
+    "types": [
+      0,
+      1
+    ],
+    "price": 100,
+    "category": 1,
+    "rating": 3
+  },
+  {
+    "id": 2,
+    "imageUrl": "https://i.ibb.co/VLdVCBB/gorchica-small.jpg",
+    "name": "Горчицца",
+    "types": [
+      0,
+      1
+    ],
+    "price": 150,
+    "category": 0,
+    "rating": 3
+  },
+  {
+    "id": 3,
+    "imageUrl": "https://i.ibb.co/W3KG5Hd/kinza-small.jpg",
+    "name": "Кинза",
+    "types": [
+      0,
+      1
+    ],
+    "price": 120,
+    "category": 2,
+    "rating": 4
+  },
+  {
+    "id": 4,
+    "imageUrl": "https://i.ibb.co/GFWhv8J/kress-salad-small.jpg",
+    "name": "Кресс-салат",
+    "types": [
+      0,
+      1
+    ],
+    "price": 110,
+    "category": 5,
+    "rating": 1
+  },
+  {
+    "id": 5,
+    "imageUrl": "https://i.ibb.co/khVLk0L/mangold-small.jpg",
+    "name": "Мангольд",
+    "types": [
+      0
+    ],
+    "price": 100,
+    "category": 5,
+    "rating": 3
+  },
+  {
+    "id": 6,
+    "imageUrl": "https://i.ibb.co/TRRsQ9G/podsolnechnick-small.jpg",
+    "name": "Подсолнечник",
+    "types": [
+      0,
+      1
+    ],
+    "price": 100,
+    "category": 4,
+    "rating": 2
+  },
+  {
+    "id": 7,
+    "imageUrl": "https://i.ibb.co/WW7WFXz/pshenica-small.jpg",
+    "name": "Пшеница",
+    "types": [
+      0,
+      1
+    ],
+    "price": 100,
+    "category": 6,
+    "rating": 1
+  },
+  {
+    "id": 8,
+    "imageUrl": "https://i.ibb.co/KxyLFm5/redis-small.jpg",
+    "name": "Редис",
+    "types": [
+      0,
+      1
+    ],
+    "price": 100,
+    "category": 3,
+    "rating": 3
+  },
+  {
+    "id": 9,
+    "imageUrl": "https://i.ibb.co/mtMb4T4/rukola-small.jpg",
+    "name": "Руккола",
+    "types": [
+      0,
+      1
+    ],
+    "price": 100,
+    "category": 1,
+    "rating": 1
+  },
+  {
+    "id": 10,
+    "imageUrl": "https://i.ibb.co/ZKD62St/vitgrass-small.jpg",
+    "name": "Витграсс",
+    "types": [
+      3,
+      4
+    ],
+    "price": 250,
+    "category": 6,
+    "rating": 1
+  }
+]
+}
