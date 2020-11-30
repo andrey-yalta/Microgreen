@@ -1,18 +1,32 @@
 import React from "react"
-import fourItem from "../../Assets/Img/Home/four-item.jpg";
-export const ShopItem =()=>{
+import classNames from "classnames"
+
+export const ShopItem =({imageUrl,name,types,price})=>{
+    const availablePrice = [100,200]
+    const[activePrice,setActivePrice] = React.useState(types[0])
+    const onSelectPrice = (index)=>{
+        setActivePrice(index);
+    }
     return(
         <div className="content__item">
             <div className="content__item-contaier">
-                <img src={fourItem} alt="gorchiza"/>
-                <h6>Горчицца</h6>
+                <img src={imageUrl} alt="gorchiza"/>
+                <h6>{name}</h6>
                 <div className="content__item-buttons">
-                    <div className="content__item-button">100 гр.</div>
-                    <div className="content__item-button active">200 гр.</div>
+                    {availablePrice.map((u, index)=>
+                        <div  key={index} onClick={()=>onSelectPrice(index)} className={classNames(
+                            {"content__item-button":true ,"active":activePrice ===index, "disabled": !types.includes(index)}
+                            )}>{u} гр.</div>
+                    )}
+
+
+
+                    {/*    <div className="content__item-button">100 гр.</div>*/}
+                    {/*<div className="content__item-button active">200 гр.</div>*/}
                 </div>
             </div>
             <div className="content__item-footer">
-                <div className="content__item-footer-salary">100 ₽.</div>
+                <div className="content__item-footer-salary">{price} ₽.</div>
                 <div className="content__item-footer__button">
                     <svg
                         width="12"

@@ -34,11 +34,11 @@
   color: #1C5A25;
 }
 .header .header-navbar {
-  margin-right: 60px;
+  margin-right: 180px;
 }
 .header .header-navbar ul li {
   display: inline;
-  margin-right: 10px;
+  margin-right: 20px;
   box-sizing: border-box;
   font-style: normal;
   font-weight: 900;
@@ -1021,6 +1021,8 @@
   color: grey;
   cursor: alias;
   opacity: 60%;
+  /*opacity: 0.4;*/
+  pointer-events: none;
 }
 .content__item .content__item-buttons .content__item-button:first-child {
   margin-right: 10px;

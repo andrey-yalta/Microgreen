@@ -10,6 +10,7 @@ export const Ordering =()=>{
             </div>
             <div className="six__nav">
                 <img src={map} alt=""/>
+
             </div>
             <div className="six__offer">
                 <h4><span>Самовывоз:</span></h4>

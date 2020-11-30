@@ -1,17 +1,31 @@
 import React from "react";
-export const Sort =()=>{
-    const [visibleSort, setVisibleSort] = React.useState(false);
-    const [SelectedSortBy, setSelectedSortBy] = React.useState(0);
-    const [activeItem, setActiveItem] = React.useState(0);
-    const sortsArray =[ { name: 'популярности', type: 'popular', order: 'desc' },
-        { name: 'цене', type: 'price', order: 'desc' },
-        { name: 'алфавиту', type: 'name', order: 'asc' }]
+import {useDispatch, useSelector} from "react-redux";
+import {setSelectedSortBy} from "../../Redux/microgreen-reducer";
+
+
+export const Sort = React.memo(()=>{
+
+    const sortsArray = useSelector(state => state.shopPage.sortsArray);
+    // прокидываем массив с сортировками с помощью хука
+    const SelectedSortBy = useSelector(state => state.shopPage.SelectedSortBy);
+    // здесь мы получаем выбранную сортировку из нашего стейта с помощью хука также
+    const dispatch = useDispatch();
+    // создаем диспатч чтобы дальше вызывать санки
     const activeLabel = sortsArray[SelectedSortBy].name;
-    const onSelectSortType = (type) => {
-       setSelectedSortBy(type);
+    // здесь чисто переменная чтобы мы выводили сортировку по умолчанию = 0
+
+    const onSelectSortType = React.useCallback((type) => {
+        dispatch(setSelectedSortBy(type));
         setVisibleSort(false);
         setActiveItem(type);
-    }
+    }, []);
+    // здесь по клику вызываем санку и устанавливаем тип сортировки в стейте
+
+    const [visibleSort, setVisibleSort] = React.useState(false);
+    const [activeItem, setActiveItem] = React.useState(0);
+    // это уже локальный стейт для отображегия активного(выбранного) элемента сортировки и видимости/невидимости списка
+
+
 
     return(            <div className="sort">
         <div className="sort__label">
@@ -46,4 +60,4 @@ export const Sort =()=>{
 
 
     </div>)
-}
+})

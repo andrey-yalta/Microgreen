@@ -1,6 +1,6 @@
+import {microgreenAPI} from "../API/api";
 
 
-import {microgreenAPI} from "../api/api";
 const TOGGLE_IS_FETCHING = "TOGGLE_IS_FETCHING";
 const SET_MICROGREEN = "SET_MICROGREEN";
 const SET_SELECTED_CATEGORY = "SET_SELECTED_CATEGORY";
@@ -30,6 +30,7 @@ const microgreenReducer = (state = initialState, action) => {
                 ...state,microgreen: action.microgreen,
             }
         case SET_SELECTED_CATEGORY:
+
             return {
                 ...state,SelectedCategory: action.SelectedCategory,
             }
@@ -50,6 +51,7 @@ export const setMicrogreen = (microgreen) =>{
     return {type:SET_MICROGREEN,microgreen}
 };
 export const setSelectedCategory = (SelectedCategory) =>{
+
     return {type:SET_SELECTED_CATEGORY,SelectedCategory}
 };
 export const setSelectedSortBy = (SelectedSortBy) =>{
