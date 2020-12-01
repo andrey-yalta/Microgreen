@@ -18,7 +18,7 @@ const boxRef = React.createRef();
 
 export const Slider =()=>{
     const ChangeStyle=(e)=>{
-        debugger;
+        // debugger;
         let x = e.clientX;
         boxRef.current.style.transform = "perspective(1000px) rotateY("+ x +"deg)";
     }

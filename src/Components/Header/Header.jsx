@@ -3,7 +3,10 @@ import firstLogo from "../../Assets/Img/Home/first-logo.png";
 import firstPhoneLogo from "../../Assets/Img/Home/first-phone-logo.png";
 import firstCartLogo from "../../Assets/Img/Home/first-cart-logo.svg";
 import {NavLink} from "react-router-dom";
+import {useSelector} from "react-redux";
 export const Header =()=>{
+    const totalCount = useSelector(state => state.cartPage.totalCount);
+    const totalPrice = useSelector(state => state.cartPage.totalPrice);
     return(
     <div className="header">
         <div className="header-logo">
@@ -26,12 +29,14 @@ export const Header =()=>{
             </div>
             <span>+7 978 050 96 77</span>
         </div>
+        <NavLink to="/cart">
         <div className="header-button button">
-            <span>520 ₽</span>
+            <span>{totalPrice} ₽</span>
             <div className="button-delimeter"/>
             <img src={firstCartLogo} alt=""/>
-            <span>3 ₽</span>
+            <span>{totalCount}</span>
         </div>
+        </NavLink>
         <div className="header-line"/>
     </div>
     )

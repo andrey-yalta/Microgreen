@@ -1,21 +1,33 @@
 import React from "react"
 import classNames from "classnames"
 
-export const ShopItem =({imageUrl,name,types,price})=>{
-    const availablePrice = [100,200]
-    const[activePrice,setActivePrice] = React.useState(types[0])
+export const ShopItem =({imageUrl,name,types,price, id, handleAppMicrogreen,AddedMicrogreenItems})=>{
+    const availableSize = [100,200]
+    const[activeSize,setActiveSize] = React.useState(types[0])
     const onSelectPrice = (index)=>{
-        setActivePrice(index);
+        setActiveSize(index);
     }
+
+    const onAddMicrogreen = () => {
+        const obj = {
+            id:id,
+            name:name,
+            imageUrl:imageUrl,
+            price:price,
+            size: availableSize[activeSize],
+
+        };
+        handleAppMicrogreen(obj);
+    };
     return(
         <div className="content__item">
             <div className="content__item-contaier">
                 <img src={imageUrl} alt="gorchiza"/>
                 <h6>{name}</h6>
                 <div className="content__item-buttons">
-                    {availablePrice.map((u, index)=>
+                    {availableSize.map((u, index)=>
                         <div  key={index} onClick={()=>onSelectPrice(index)} className={classNames(
-                            {"content__item-button":true ,"active":activePrice ===index, "disabled": !types.includes(index)}
+                            {"content__item-button":true ,"active":activeSize ===index, "disabled": !types.includes(index)}
                             )}>{u} гр.</div>
                     )}
 
@@ -27,7 +39,7 @@ export const ShopItem =({imageUrl,name,types,price})=>{
             </div>
             <div className="content__item-footer">
                 <div className="content__item-footer-salary">{price} ₽.</div>
-                <div className="content__item-footer__button">
+                <div className="content__item-footer__button" onClick={onAddMicrogreen}>
                     <svg
                         width="12"
                         height="12"
@@ -41,7 +53,7 @@ export const ShopItem =({imageUrl,name,types,price})=>{
                         />
                     </svg>
                     <span>Добавить</span>
-                    <i>2</i>
+                    { AddedMicrogreenItems &&<i>{AddedMicrogreenItems}</i>}
                 </div>
             </div>
         </div>

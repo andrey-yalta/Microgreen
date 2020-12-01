@@ -2,6 +2,7 @@ import React from "react"
 import {ShopItem} from "./ShopItem";
 import {useDispatch, useSelector} from "react-redux";
 import {getMicrogreen} from "../../Redux/microgreen-reducer";
+import {addMicrogreenToCart} from "../../Redux/cart-reducer";
 
 
 
@@ -24,10 +25,15 @@ export const ShopItemContainer = ()=>{
     },[SelectedCategory,SelectedSortBy])
     // это уже короче методы жизненного цикла - получение массива с микрозеденью
 
+    const microgreenItems = useSelector(state => state.cartPage.items);
 
+    const onMicrogreenAdd=(obj)=>{
+        //короче это метод чтобы добавлять в корзину
+        dispatch(addMicrogreenToCart(obj));
+    }
     return(
         <div className="content__items">
-            {microgreen.map((u,index)=><ShopItem key={index} {...u}/>)}
+            {microgreen.map((u,index)=><ShopItem AddedMicrogreenItems={microgreenItems[u.id]&& microgreenItems[u.id].items.length}  handleAppMicrogreen={onMicrogreenAdd} key={index} {...u}/>)}
         </div>
     )
 }

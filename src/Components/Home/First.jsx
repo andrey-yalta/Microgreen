@@ -6,7 +6,7 @@ export const First =()=>{
             <Header/>
             <div className="first-container">
                 <h1>Микрозелень</h1>
-                <h2>Здоровое питание <b>и красота ваших блюд</b></h2>
+                <h2>Здоровое питание <br/>и красота ваших блюд</h2>
                 <div className="first-triggers">
                     <h4>Работаем более трёх лет</h4>
                     <h4>Доставляем любую точку города</h4>
