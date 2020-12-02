@@ -9,17 +9,20 @@ export const Header =()=>{
     const totalPrice = useSelector(state => state.cartPage.totalPrice);
     return(
     <div className="header">
+        <NavLink to="/">
         <div className="header-logo">
             <img src={firstLogo} alt="Microgreen"/>
-            <span>Микрозелень <b>в Ялте </b></span>
+            <span>Микрозелень <br/><b>в Ялте </b></span>
 
         </div>
+        </NavLink>
         <div className="header-navbar">
             <ul>
                 <li><NavLink  to="/" exact>Главная</NavLink></li>
                 <li><NavLink  to="/about">О нас </NavLink></li>
                 <li><NavLink  to="/shop">Магазин </NavLink></li>
                 <li><NavLink  to="/cart">Корзина </NavLink></li>
+                <li><NavLink  to="/contacts">Контакты </NavLink></li>
                 {/*<li><a href="/">Контакты</a></li>*/}
             </ul>
         </div>

@@ -23,7 +23,7 @@ export const Footer = ()=>{
                 <p><b>WhatsApp / Viber ::</b>+7 978 050 96 77 - <span>Ирина</span></p>
             </div>
             <div className="footer__down-social">
-                <img src={vk} alt=""/>
+                <img src={vk} alt="" />
                     <img src={whatsapp} alt=""/>
                         <img src={inst} alt=""/>
                             <img src={viber} alt=""/>

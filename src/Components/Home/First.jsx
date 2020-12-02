@@ -3,7 +3,7 @@ import {Header} from "../Header/Header";
 export const First =()=>{
     return(
         <div className="first">
-            <Header/>
+
             <div className="first-container">
                 <h1>Микрозелень</h1>
                 <h2>Здоровое питание <br/>и красота ваших блюд</h2>

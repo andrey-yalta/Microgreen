@@ -22,6 +22,7 @@ export const Slider =()=>{
         let x = e.clientX;
         boxRef.current.style.transform = "perspective(1000px) rotateY("+ x +"deg)";
     }
+
     return(
         <div className="five">
             <h4>Примеры блюд с <span>Миерозеленью</span></h4>

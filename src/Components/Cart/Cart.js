@@ -31,7 +31,7 @@ export const Cart =()=>{
         dispatch(minusCartItem(id));
     }
     return(<div>
-        <Header/>
+
         {totalCount? <div className="cart">
             <div className="cart__top-line">
                 <div><h4><img src={curt} alt=""/> Корзина</h4></div>
@@ -41,8 +41,11 @@ export const Cart =()=>{
                 {addedMicrogreen.map(obj=><CartItem  onMinus={onMinusItem} onPlus={onPlusItem} key={`${obj.id}_${obj.name}`}  id={obj.id} onRemove ={onRemoveItem}  imageUrl={obj.imageUrl}  totalCount ={items[obj.id].items.length} name = {obj.name} type={obj.type} size ={obj.size} totalPrice={items[obj.id].totalPrice}/>)}
 
             </div>
+
+
+
         </div>:<CartEmpty/>}
-        <Footer/>
+
 
     </div>)
 }

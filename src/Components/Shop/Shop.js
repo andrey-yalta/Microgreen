@@ -9,8 +9,8 @@ import {ShopItemContainer} from "./ShopItemContainer";
 
 export const Shop = ()=>{
     return(
-        <div>
-            <Header/>
+
+
         <div className="content">
             <div className="content__top">
                 <Categories/>
@@ -21,7 +21,7 @@ export const Shop = ()=>{
             </div>
             <ShopItemContainer/>
         </div>
-            <Footer/>
-        </div>
+
+
 )
 }

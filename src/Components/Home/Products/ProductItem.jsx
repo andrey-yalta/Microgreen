@@ -1,19 +1,45 @@
 import React from "react"
 import fourItem from "../../../Assets/Img/Home/four-item.jpg";
-export const ProductItem =()=>{
+import classNames from "classnames";
+export const ProductItem =({imageUrl,name,types,price, id, handleAppMicrogreen,AddedMicrogreenItems})=>{
+    const availableSize = [100,200]
+    const[activeSize,setActiveSize] = React.useState(types[0])
+    const onSelectPrice = (index)=>{
+        setActiveSize(index);
+    }
+
+    const onAddMicrogreen = () => {
+        const obj = {
+            id:id,
+            name:name,
+            imageUrl:imageUrl,
+            price:price,
+            size: availableSize[activeSize],
+
+        };
+        handleAppMicrogreen(obj);
+    };
     return(
         <div className="four__item">
             <div className="four__item-contaier">
-                <img src={fourItem} alt="gorchiza"/>
-                <h6>Горчицца</h6>
+                <img src={imageUrl} alt="gorchiza"/>
+                <h6>{name}</h6>
                 <div className="four__item-buttons">
-                    <div className="four__item-button active">100 гр.</div>
-                    <div className="four__item-button disabled">200 гр.</div>
+                    {availableSize.map((u, index)=>
+                        <div  key={index} onClick={()=>onSelectPrice(index)} className={classNames(
+                            {"four__item-button":true ,"active":activeSize ===index, "disabled": !types.includes(index)}
+                        )}>{u} гр.</div>
+                    )}
+
+
+
+                    {/*    <div className="content__item-button">100 гр.</div>*/}
+                    {/*<div className="content__item-button active">200 гр.</div>*/}
                 </div>
             </div>
             <div className="four__item-footer">
-                <div className="four__item-footer-salary">100 ₽.</div>
-                <div className="four__item-footer__button">
+                <div className="four__item-footer-salary">{price} ₽.</div>
+                <div className="four__item-footer__button" onClick={onAddMicrogreen}>
                     <svg
                         width="12"
                         height="12"
@@ -27,7 +53,7 @@ export const ProductItem =()=>{
                         />
                     </svg>
                     <span>Добавить</span>
-                    <i>2</i>
+                    { AddedMicrogreenItems &&<i>{AddedMicrogreenItems}</i>}
                 </div>
             </div>
         </div>

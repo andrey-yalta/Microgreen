@@ -3,51 +3,61 @@ import fourItem from "../../../Assets/Img/Home/four-item.jpg"
 import fourArrow from "../../../Assets/Img/Home/four-arrow.png"
 import firstCartLogo from "../../../Assets/Img/Home/first-cart-logo.svg"
 import {ProductItem} from "./ProductItem";
+import Carousel from 'react-elastic-carousel';
+import {useDispatch, useSelector} from "react-redux";
+import {getMicrogreen} from "../../../Redux/microgreen-reducer";
+import {addMicrogreenToCart} from "../../../Redux/cart-reducer";
+import {ShopItem} from "../../Shop/ShopItem";
+import {NavLink} from "react-router-dom";
+
 export const Products =()=>{
+    const breakPoints = [
+        { width: 1, itemsToShow: 1 },
+        { width: 550, itemsToShow: 2 },
+        { width: 768, itemsToShow: 3 },
+        { width: 1200, itemsToShow: 4 },
+    ];
+
+    const dispatch = useDispatch();
+    // создаем диспатч чтобы дальше вызывать санки
+    const SelectedSortBy = useSelector(state => state.shopPage.SelectedSortBy);
+    // здесь мы получаем выбранную сортировку из нашего стейта с помощью хука также
+    const SelectedCategory = useSelector(state => state.shopPage.SelectedCategory);
+    // здесь мы получаем выбранную категорию из нашего стейта с помощью хука также
+    const microgreen = useSelector(state => state.shopPage.microgreen);
+    // получение собственно массива микрозелени
+    const sortsArray = useSelector(state => state.shopPage.sortsArray);
+    // сомнительный момент, надо будет пересмотреть код - вообще это нужно будет чтобы получить значение массива по индексу и задиспатчить в апи
+    const isFetching = useSelector(state => state.shopPage.isFetching);
+    // это для прелоадера
+
+    React.useEffect(()=>{
+        dispatch(getMicrogreen(SelectedCategory,sortsArray[SelectedSortBy]));
+    },[SelectedCategory,SelectedSortBy])
+    // это уже короче методы жизненного цикла - получение массива с микрозеденью
+
+    const microgreenItems = useSelector(state => state.cartPage.items);
+
+    const onMicrogreenAdd=(obj)=>{
+        //короче это метод чтобы добавлять в корзину
+        dispatch(addMicrogreenToCart(obj));
+    }
+
     return(
         <div className="four">
 
             <h4>Наша <span>продукция</span></h4>
-            <div className="four__items">
+                <Carousel className="four__items" breakPoints={breakPoints}>
+                    {microgreen.map((u,index)=><ProductItem AddedMicrogreenItems={microgreenItems[u.id]&& microgreenItems[u.id].items.length}  handleAppMicrogreen={onMicrogreenAdd} key={index} {...u}/>)}
 
-                <ProductItem/>
-                <ProductItem/>
-                <ProductItem/>
-                <ProductItem/>
+                </Carousel>
 
-
-
-
-            </div>
-            <div className="four__nav">
-                <div className="four__nav-button">
-                    <a href="/"> <img src={fourArrow} alt=""/></a>
-                </div>
-                <div className="four__nav-links">
-                    <div className="four__nav-link"><a href="/"/></div>
-                    <div className="four__nav-link active"><a href="/"/></div>
-                    <div className="four__nav-link"><a href="/"/></div>
-                    <div className="four__nav-link"><a href="/"/></div>
-                    <div className="four__nav-link"><a href="/"/></div>
-                </div>
-                <div className="four__nav-button ">
-                    <a href="/"> <img src={fourArrow} alt=""/></a>
-                </div>
-            </div>
             <div className="four-button button">
 
-                <span>Перейти в магазин</span>
+                <NavLink to="/shop"><span>Перейти в магазин</span></NavLink>
                 <img src={firstCartLogo} alt="go to shop"/>
 
             </div>
         </div>
     )
 }
-
-
-// import React from "react"
-// export const Products =()=>{
-//     return(
-//         <div></div>
-//     )
-// }
