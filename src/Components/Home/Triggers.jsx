@@ -7,6 +7,7 @@ export const Triggers =()=>{
     return(
         <div className="three">
             <h4> Чем полезна <span>Микрозелень?</span></h4>
+            <div className="three-container">
             <div className="three-up">
 
                 <div className="three-item item1">
@@ -79,6 +80,7 @@ export const Triggers =()=>{
                 </div>
 
 
+            </div>
             </div>
         </div>
     )

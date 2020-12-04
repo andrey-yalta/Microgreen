@@ -1,5 +1,6 @@
 import React from "react"
 import empty from "../../Assets/Img/Cart/curt.png"
+import {NavLink} from "react-router-dom";
 
 export const CartEmpty =()=>{
 
@@ -17,7 +18,10 @@ export const CartEmpty =()=>{
                         страницу.
                     </p>
                     <img src={empty} alt=""/>
+
+                        <NavLink to="/shop">
                         <div className="cart__empty-button"> Вернуться назад</div>
+                        </NavLink>
                 </div>
 
 

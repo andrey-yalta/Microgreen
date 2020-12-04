@@ -1,5 +1,6 @@
 import React from "react";
 import {Header} from "../Header/Header";
+import {NavLink} from "react-router-dom";
 export const First =()=>{
     return(
         <div className="first">
@@ -14,7 +15,7 @@ export const First =()=>{
                     <h4>Выгодные условия для ресторанов</h4>
                 </div>
                 <div className="first-button button">
-                    <a href="/">Перейти в магазин</a>
+                    <NavLink to="/shop">Перейти в магазин</NavLink>
                 </div>
             </div>
         </div>

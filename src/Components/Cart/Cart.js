@@ -7,6 +7,7 @@ import {CartItem} from "./CartItem";
 import {useDispatch, useSelector} from "react-redux";
 import {clearCart, minusCartItem, plusCartItem, removeItem} from "../../Redux/cart-reducer";
 import {CartEmpty} from "./CartEmpty";
+import {NavLink} from "react-router-dom";
 
 export const Cart =()=>{
     const {totalPrice,totalCount, items} = useSelector(({cartPage})=>cartPage);
@@ -40,6 +41,29 @@ export const Cart =()=>{
             <div className="cart__items">
                 {addedMicrogreen.map(obj=><CartItem  onMinus={onMinusItem} onPlus={onPlusItem} key={`${obj.id}_${obj.name}`}  id={obj.id} onRemove ={onRemoveItem}  imageUrl={obj.imageUrl}  totalCount ={items[obj.id].items.length} name = {obj.name} type={obj.type} size ={obj.size} totalPrice={items[obj.id].totalPrice}/>)}
 
+            </div>
+
+            <div className="cart__bottom">
+                <div className="cart__bottom-details">
+                    <span> Всего пицц: <b>{totalCount} шт.</b> </span>
+                    <span> Сумма заказа: <b>{totalPrice} ₽</b> </span>
+                </div>
+                <div className="cart__bottom-buttons">
+                    <div href="/" className="button button--outline button--add go-back-btn">
+                        <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7 13L1 6.93015L6.86175 1" stroke="#D3D3D3" strokeWidth="1.5"
+                                  strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+
+                        <NavLink to="/shop">
+                            <span>Вернуться назад</span>
+                        </NavLink>
+                    </div>
+                    <div className="button pay-btn">
+                        <span>Оплатить сейчас</span>
+                    </div>
+                </div>
             </div>
 
 

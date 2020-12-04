@@ -19,11 +19,13 @@ export const Ordering =()=>{
             </div>
             <div className="six__nav">
                 {/*<img src={map} alt=""/>*/}
-                <YMaps>
+                <div className="six__nav-maps">
+                <YMaps >
                     <Map defaultState={mapData} width={900} height={400}>
                         {coordinates.map(coordinate => <Placemark geometry={coordinate} />)}
                     </Map>
                 </YMaps>
+                </div>
 
             </div>
             <div className="six__offer">
