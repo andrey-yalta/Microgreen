@@ -36,7 +36,7 @@ export const Cart =()=>{
         {totalCount? <div className="cart">
             <div className="cart__top-line">
                 <div><h4><img src={curt} alt=""/> Корзина</h4></div>
-                <div  className="cart__clear-button" onClick={onClearCart}><img src={del} alt=""/><span > Очистить корзину</span></div>
+                <div className="cart__top-line-clear"><div  className="cart__clear-button" onClick={onClearCart}><img src={del} alt=""/><span > Очистить корзину</span></div></div>
             </div>
             <div className="cart__items">
                 {addedMicrogreen.map(obj=><CartItem  onMinus={onMinusItem} onPlus={onPlusItem} key={`${obj.id}_${obj.name}`}  id={obj.id} onRemove ={onRemoveItem}  imageUrl={obj.imageUrl}  totalCount ={items[obj.id].items.length} name = {obj.name} type={obj.type} size ={obj.size} totalPrice={items[obj.id].totalPrice}/>)}

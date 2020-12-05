@@ -15,6 +15,7 @@ export  const CartItem =(props)=>{
     }
 
     return(           <div className="cart__item">
+        <div className="cart__item-up">
         <div className="cart__item-img">
             <img
                 className="pizza-block__image"
@@ -26,6 +27,8 @@ export  const CartItem =(props)=>{
             <h3>{props.name}</h3>
             <p> {props.size} гр.</p>
         </div>
+        </div>
+        <div className="cart__item-down">
         <div className="cart__item-count">
             <div className="cart__item-button" onClick={handleOnPlusItemClick}>
                 <img src={plus} alt=""/>
@@ -42,6 +45,7 @@ export  const CartItem =(props)=>{
             <div className="cart__item-button" onClick={handleOnRemoveClick} >
                 <img src={close} alt=""/>
             </div>
+        </div>
         </div>
 
     </div>)

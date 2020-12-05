@@ -1192,6 +1192,16 @@ body {
   width: 820px;
   border-top: 1px solid #C4C4C4;
 }
+.cart__item-up {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.cart__item-down {
+  display: flex;
+  align-items: center;
+}
 
 .cart__item-img img {
   width: 100px;
@@ -1204,8 +1214,8 @@ body {
 }
 
 .cart__item-count {
-  position: absolute;
-  left: 50%;
+  /*position: absolute;*/
+  /*left: 50%;*/
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1220,8 +1230,8 @@ body {
 }
 
 .cart__item-price {
-  position: absolute;
-  left: 65%;
+  /*position: absolute;*/
+  /*left: 65%;*/
   font-style: normal;
   font-weight: bold;
   font-size: 22px;
@@ -1235,8 +1245,8 @@ body {
   cursor: pointer;
 }
 .cart__item-remove{
-  position: absolute;
-  left: 77%;
+  /*position: absolute;*/
+  /*left: 77%;*/
 }
 /*************ABOUT************/
 .about {
@@ -1323,7 +1333,7 @@ body {
   letter-spacing: 0.01em;
   color: #777777;
 }
-.content__empty .cart__empty-button {
+.cart__empty-button {
   margin-top: 30px;
   width: 210px;
   height: 46px;
@@ -1424,7 +1434,7 @@ h4 span {
 /*bottom of cart**********/
 .cart__bottom {
   margin-bottom: 100px;
-  width: 820px;
+  /*width: 820px;*/
 }
 
 .cart__bottom-details {
@@ -1453,7 +1463,7 @@ h4 span {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 240px;
+  /*width: 240px;*/
   border-radius: 30px;
   border: 2px solid #C1BABA;
   background: #FFFFFF;
@@ -2503,4 +2513,454 @@ h4 span {
   }
 
   /**********************FOOTER*******************/
+}
+
+
+/*********************ADAPTIvE*************/
+/*********************ADAPTIvE*************/
+/*********************ADAPTIvE*************/
+/*********************ADAPTIvE*************/
+/*********************ADAPTIvE*************/
+@media (max-width: 720px) {
+  /*********************header*************/
+  /*********************container*************/
+  .content {
+    background: #EAEAEC;
+    height: 100%;
+    padding: 0px;
+  }
+  .content .content__top {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .content .categories ul {
+    padding-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .content .categories ul li {
+    width: 120px;
+    margin-bottom: 5px;
+  }
+
+  .content__title {
+    margin-left: 10%;
+  }
+
+  /*********************ITEMS*************/
+  .content__items {
+    justify-content: center;
+  }
+
+
+}
+/**********************ADAPTiVE IPAD**************************/
+/**********************ADAPTiVE IPAD**************************/
+/**********************ADAPTiVE IPAD**************************/
+/**********************ADAPTiVE IPAD**************************/
+/*************************************************************/
+@media (max-width: 960px) and (min-width: 721px) {
+
+  /*********************container*************/
+  .content {
+    background: #EAEAEC;
+    height: 100%;
+    padding: 0px;
+  }
+  .content .content__top {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  .content .categories ul {
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .content .categories ul li {
+    margin-bottom: 5px;
+    padding: 13px 23px;
+  }
+  .content .sort {
+    margin-left: 48%;
+    padding-top: 20px;
+  }
+  .content .content__title {
+    margin-left: 10%;
+  }
+
+  /*********************ITEMS*************/
+  .content__items {
+    justify-content: center;
+  }
+}
+/**********************small leptop**************************/
+/**********************small leptop**************************/
+/*********************small leptop**************************/
+/**********************Asmall leptop**************************/
+/*************************************************************/
+@media (max-width: 1320px) and (min-width: 961px) {
+  .content {
+    padding: 40px 100px;
+  }
+  .content .content__top {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  .content .categories ul {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    display: flex;
+  }
+  .content .categories ul li {
+    margin-bottom: 5px;
+    padding: 13px 23px;
+  }
+  .content .sort {
+    padding-top: 20px;
+    margin-left: 48%;
+  }
+  .content .content__title {
+    margin-left: 10%;
+  }
+  .content .content__items {
+    justify-content: center;
+  }
+}
+
+/*****************************CART**********************/
+/*****************************MEDIA ADAPTIVE**********************/
+/*****************************MEDIA ADAPTIVE**********************/
+/*****************************MEDIA ADAPTIVE**********************/
+/*****************************MEDIA ADAPTIVE**********************/
+@media (max-width: 720px) {
+
+  .cart__bottom-details span {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+  }
+
+  .cart__bottom-buttons span {
+    font-size: 16px;
+    text-align: center;
+  }
+  /*******FIRST********/
+  .cart {
+    padding: 40px 40px;
+  }
+  .cart .cart__top-line {
+    width: 100%;
+  }
+  .cart .cart__top-line h4 {
+    font-size: 16px;
+  }
+  .cart .cart__top-line h4 img {
+    width: 15%;
+  }
+  .cart .cart__top-line span {
+    font-size: 16px;
+  }
+  .cart .cart__top-line .cart__top-line-clear {
+    width: 50%;
+  }
+
+  .cart__items {
+    width: 100%;
+  }
+
+  .cart__item {
+    padding: 20px 0;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .cart__item-info {
+    margin-right: 10px;
+  }
+
+  .cart__item-price {
+    margin-right: 15px;
+  }
+
+  .empty{
+    padding: 40px 40px;
+  }
+  .content__empty {
+    margin-top: 20px;
+    width: 100%;
+  }
+
+  .content__empty h4 {
+    margin-top: 10px;
+    font-size: 26px;
+    text-align: center;
+  }
+  .content__empty p {
+    font-size: 16px;
+  }
+  .content__empty .cart__empty-button {
+    margin-top: 30px;
+    /*width: 210px;*/
+    height: 46px;
+    background: #282828;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    letter-spacing: 0.015em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    margin-bottom: 100px;
+  }
+
+
+}
+/**********************ADAPTiVE IPAD**************************/
+/**********************ADAPTiVE IPAD**************************/
+/**********************ADAPTiVE IPAD**************************/
+/**********************ADAPTiVE IPAD**************************/
+/*************************************************************/
+@media (max-width: 960px) and (min-width: 721px) {
+
+  /*******CONTENT********/
+  .cart {
+    padding: 40px 70px;
+  }
+  .cart .cart__top-line {
+    width: 100%;
+  }
+  .cart .cart__top-line h4 {
+    font-size: 16px;
+  }
+  .cart .cart__top-line h4 img {
+    width: 15%;
+  }
+  .cart .cart__top-line span {
+    font-size: 16px;
+  }
+
+  .cart__items {
+    width: 100%;
+  }
+
+  .cart__item {
+    padding: 20px 0;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .cart__item-info {
+    margin-right: 10%;
+  }
+
+  .cart__empty {
+    margin-top: 20px;
+    width: 100%;
+  }
+}
+/**********************small leptop**************************/
+/**********************small leptop**************************/
+/*********************small leptop**************************/
+/**********************Asmall leptop**************************/
+/*************************************************************/
+/*@media (max-width: 1320px) and (min-width: 961px) {*/
+/*  */
+/*}*/
+
+
+
+/*****************************ABOUT**********************/
+/*****************************MEDIA ADAPTIVE**********************/
+/*****************************MEDIA ADAPTIVE**********************/
+/*****************************MEDIA ADAPTIVE**********************/
+/*****************************MEDIA ADAPTIVE**********************/
+@media (max-width: 720px) {
+
+  /*******FIRST********/
+  /*********************Content*************/
+  .about {
+    padding: 40px 60px;
+  }
+  .about .about__inform {
+    flex-direction: column;
+    margin-bottom: 40px;
+  }
+  .about .about__inform-video img {
+    width: 863px;
+    height: 487px;
+  }
+  .about .about__inform-video iframe {
+    width: 321px;
+    height: 181px;
+  }
+  .about__inform-video{
+    width: 321px;
+    height: 181px;
+  }
+  .about .about__inform-photos img {
+    width: 321px;
+    height: 362px;
+  }
+  .about .about__process img {
+    width: 320px;
+  }
+
+
+}
+/**********************ADAPTiVE IPAD**************************/
+/**********************ADAPTiVE IPAD**************************/
+/**********************ADAPTiVE IPAD**************************/
+/**********************ADAPTiVE IPAD**************************/
+/*************************************************************/
+@media (max-width: 960px) and (min-width: 721px) {
+
+  /*****************FIRST*************************/
+  .about {
+    padding: 40px 60px;
+  }
+  .about .about__inform {
+    flex-direction: column;
+    margin-bottom: 40px;
+  }
+  .about .about__inform-video img {
+    width: 666px;
+    height: 376px;
+  }
+  .about .about__inform-photos img {
+    width: 435px;
+    height: 490px;
+  }
+  .about .about__process img {
+    width: 613.24px;
+  }
+
+}
+/**********************small leptop**************************/
+/**********************small leptop**************************/
+/*********************small leptop**************************/
+/**********************Asmall leptop**************************/
+/*************************************************************/
+@media (max-width: 1320px) and (min-width: 961px) {
+
+
+  .about {
+    padding: 40px 60px;
+  }
+  .about .about__inform-video img {
+    width: 666px;
+    height: 376px;
+  }
+  .about .about__inform-photos img {
+    height: 376px;
+  }
+  .about .about__process {
+    justify-content: center;
+    display: flex;
+  }
+  .about .about__process img {
+    width: 820px;
+  }
+}
+
+
+/*****************************CONTACTS**********************/
+/*****************************MEDIA ADAPTIVE**********************/
+/*****************************MEDIA ADAPTIVE**********************/
+/*****************************MEDIA ADAPTIVE**********************/
+/*****************************MEDIA ADAPTIVE**********************/
+@media (max-width: 720px) {
+
+
+  /*******FIRST********/
+  .contacts {
+    padding: 40px 40px;
+    height: 100%;
+  }
+
+  .contacts__city {
+    padding-bottom: 40px;
+    text-align: center;
+  }
+
+  .contacts__info-block {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  .contacts__info-block .contact__info-block__name {
+    margin-bottom: 20px;
+  }
+  .contacts__info-block .contact__info-block__num {
+    position: relative;
+    left: 0%;
+  }
+  .contacts__info-block:last-child .contact__info-block__name {
+    text-align: center;
+  }
+
+  .contacts__button {
+    margin-top: 80px;
+    width: 238px;
+    height: 46px;
+    font-size: 16px;
+  }
+
+  /**********************FOOTER*******************/
+
+}
+/**********************ADAPTiVE IPAD**************************/
+/**********************ADAPTiVE IPAD**************************/
+/**********************ADAPTiVE IPAD**************************/
+/**********************ADAPTiVE IPAD**************************/
+/*************************************************************/
+@media (max-width: 960px) and (min-width: 721px) {
+
+
+  /*******FIRST********/
+  .contacts {
+    padding: 40px 40px;
+    height: 100%;
+  }
+
+  .contacts__info-block {
+    margin-bottom: 40px;
+  }
+  .contacts__info-block .contact__info-block__name {
+    margin-bottom: 20px;
+  }
+  .contacts__info-block .contact__info-block__num {
+    position: relative;
+    left: 0%;
+  }
+
+  .contacts__button {
+    width: 238px;
+    height: 46px;
+    font-size: 16px;
+  }
+
+  /**********************FOOTER*******************/
+
+}
+/**********************small leptop**************************/
+/**********************small leptop**************************/
+/*********************small leptop**************************/
+/**********************Asmall leptop**************************/
+/*************************************************************/
+@media (max-width: 1320px) and (min-width: 961px) {
+
 }
