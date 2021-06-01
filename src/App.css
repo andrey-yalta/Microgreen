@@ -680,9 +680,12 @@ a{
   height: 700px;
 }
 .six__nav{
-  background-image: url("Assets/Img/Home/map.png");
-  width: 896px;
-  height: 397px;
+  /*background-image: url("Assets/Img/Home/map.png");*/
+  /*width: 896px;*/
+  /*height: 397px;*/
+  display: flex;
+  justify-content: center;
+  height: 100%;
 }
 .six h4 {
   font-family: Montserrat Alternates;
@@ -916,6 +919,210 @@ a{
 
 /*********************FOOTER*************/
 
+/********************ORDER*****************************/
+/********************ORDER*****************************/
+/********************ORDER*****************************/
+/********************ORDER*****************************/
+.order {
+  padding: 40px 130px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.order__top-line {
+  width: 820px;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.order__top-line h4 {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 39px;
+  /* identical to box height */
+  letter-spacing: 0.01em;
+  color: #000000;
+}
+.order__top-line span {
+  align-items: flex-end;
+}
+
+.order__content {
+  display: flex;
+  justify-content: center;
+}
+
+.order__content-form {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.order__content-form input {
+  background: #FFFFFF;
+  border: 4px solid #AF2060;
+  box-sizing: border-box;
+  border-radius: 19px;
+  height: 54px;
+  width: 320px;
+  padding: 20px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 33px;
+  /* identical to box height */
+  color: #ADB2AE;
+  letter-spacing: 0.01em;
+  margin: 10px 30px;
+}
+.order__content-form input:last-child {
+  width: 400px;
+  height: 140%;
+}
+
+.order__content-order {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 500px;
+}
+.order__content-order h4 {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 37px;
+  /* identical to box height */
+  letter-spacing: 0.01em;
+  color: #000000;
+  margin-bottom: 30px;
+}
+.order__content-order span {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 37px;
+  /* identical to box height */
+  letter-spacing: 0.01em;
+}
+.order__content-order span.order__content-order-summ b {
+  color: #AF2060;
+}
+.order__content-order .order__content-order-stuff {
+  background: #FFFFFF;
+  border: 4px solid #AF2060;
+  box-sizing: border-box;
+  border-radius: 23px;
+  padding: 5px 40px;
+  margin-bottom: 30px;
+}
+.order__content-order .order__content-order-stuff span {
+  padding: 10px 40px;
+}
+.order__content-order .order__content-order-stuff span b {
+  color: #AF2060;
+}
+
+/*bottom of cart**********/
+.order__bottom {
+  padding-bottom: 100px;
+  width: 800px;
+}
+
+.order__bottom-details {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+.order__bottom-details span {
+  font-family: Montserrat Alternates;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+}
+.order__bottom-details span:last-child b {
+  color: #AF2060;
+}
+
+.order__bottom-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.go-back-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 240px;
+  border-radius: 30px;
+  border: 2px solid #C1BABA;
+  background: #FFFFFF;
+}
+.go-back-btn span {
+  color: #C4C4C4;
+  font-family: Montserrat Alternates;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 18px;
+  margin-right: 10px;
+}
+.go-back-btn:hover {
+  background-color: #C1BABA;
+  border-color: #989696;
+}
+.go-back-btn:hover span {
+  color: #FFF;
+}
+.go-back-btn svg {
+  margin-right: 12px;
+}
+.go-back-btn svg path {
+  fill: transparent;
+  strokeWidth: 2;
+}
+
+.pay-btn {
+  display: flex;
+  background: #AF2060;
+  border-radius: 30px;
+  box-sizing: border-box;
+  align-items: center;
+  line-height: 23px;
+  padding: 12px 25px;
+}
+.pay-btn:hover {
+  background: #7E1142;
+}
+.pay-btn span {
+  font-family: Montserrat Alternates;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 22px;
+  color: #FFFFFF;
+}
+.pay-btn img {
+  margin-right: 3px;
+}
+.pay-btn .button-delimeter {
+  width: 2px;
+  height: 25px;
+  left: 1219px;
+  top: 51px;
+  margin: 0 5px;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/********************ORDER*****************************/
+/********************ORDER*****************************/
 
 
 /*********SHOP*******************/
@@ -1778,8 +1985,8 @@ h4 span {
     justify-content: center;
   }
   .six .six__nav .six__nav-maps {
-    width: 315px;
-    height: 248px;
+    /*width: 315px;*/
+    /*height: 248px;*/
   }
 
   /**********************SEVEN*******************/
@@ -2114,8 +2321,8 @@ h4 span {
   }
   .six .six__nav .six__nav-maps {
     padding: 0px 80px;
-    width: 566px;
-    height: 294px;
+    /*width: 566px;*/
+    /*height: 294px;*/
   }
 
   /**********************SEVEN*******************/
@@ -2421,8 +2628,8 @@ h4 span {
   }
   .six .six__nav .six__nav-maps {
     padding: 0px 80px;
-    width: 80%;
-    height: 80%;
+    /*width: 80%;*/
+    /*height: 80%;*/
   }
 
   /**********************SEVEN*******************/

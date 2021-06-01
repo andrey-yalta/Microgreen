@@ -4,14 +4,15 @@ import plus from "../../Assets/Img/Cart/plus.png";
 import minus from "../../Assets/Img/Cart/minus.png";
 import close from "../../Assets/Img/Cart/close.png";
 export  const CartItem =(props)=>{
+
     const handleOnRemoveClick=()=>{
-        props.onRemove(props.id)
+        props.onRemove(props.id, props.size)
     }
     const handleOnPlusItemClick =()=>{
-        props.onPlus(props.id)
+        props.onPlus(props.id, props.size)
     }
     const handleOnMinusItemClick =()=>{
-        props.onMinus(props.id)
+        props.onMinus(props.id, props.size)
     }
 
     return(           <div className="cart__item">

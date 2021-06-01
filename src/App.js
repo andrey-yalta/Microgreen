@@ -8,6 +8,7 @@ import {Contacts} from "./Components/Contacts/Contacts";
 import {Header} from "./Components/Header/Header";
 import {Footer} from "./Components/Home/Footer";
 import React from "react";
+import {Order} from "./Components/Order/Order";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path={"/cart"} render={ ()=><Cart/> }/>
         <Route path={"/about"} render={ ()=><About/> }/>
         <Route path={"/contacts"} render={ ()=><Contacts/> }/>
+        <Route path={"/order"} render={ ()=><Order/> }/>
         <Footer/>
     </div>
   );

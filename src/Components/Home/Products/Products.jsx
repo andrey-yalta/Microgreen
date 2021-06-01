@@ -6,7 +6,7 @@ import {ProductItem} from "./ProductItem";
 import Carousel from 'react-elastic-carousel';
 import {useDispatch, useSelector} from "react-redux";
 import {getMicrogreen} from "../../../Redux/microgreen-reducer";
-import {addMicrogreenToCart} from "../../../Redux/cart-reducer";
+import {_getItemCount, addMicrogreenToCart, getGroupSum} from "../../../Redux/cart-reducer";
 import {ShopItem} from "../../Shop/ShopItem";
 import {NavLink} from "react-router-dom";
 
@@ -42,13 +42,16 @@ export const Products =()=>{
         //короче это метод чтобы добавлять в корзину
         dispatch(addMicrogreenToCart(obj));
     }
+    const AddedMicrogreenItems = (id)=>{
+        return  getGroupSum(microgreenItems[id], _getItemCount)
+    }
 
     return(
         <div className="four">
 
             <h4>Наша <span>продукция</span></h4>
                 <Carousel className="four__items" breakPoints={breakPoints}>
-                    {microgreen.map((u,index)=><ProductItem AddedMicrogreenItems={microgreenItems[u.id]&& microgreenItems[u.id].items.length}  handleAppMicrogreen={onMicrogreenAdd} key={index} {...u}/>)}
+                    {microgreen.map((u,index)=><ProductItem AddedMicrogreenItems={microgreenItems[u.id] && AddedMicrogreenItems(u.id)}  handleAppMicrogreen={onMicrogreenAdd} key={index} {...u}/>)}
 
                 </Carousel>
 

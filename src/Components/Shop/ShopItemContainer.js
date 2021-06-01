@@ -2,7 +2,7 @@ import React from "react"
 import {ShopItem} from "./ShopItem";
 import {useDispatch, useSelector} from "react-redux";
 import {getMicrogreen} from "../../Redux/microgreen-reducer";
-import {addMicrogreenToCart} from "../../Redux/cart-reducer";
+import {_getItemCount, addMicrogreenToCart, getGroupSum} from "../../Redux/cart-reducer";
 
 
 
@@ -31,9 +31,15 @@ export const ShopItemContainer = ()=>{
         //короче это метод чтобы добавлять в корзину
         dispatch(addMicrogreenToCart(obj));
     }
+
+    const AddedMicrogreenItems = (id)=>{
+       return  getGroupSum(microgreenItems[id], _getItemCount)
+    }
+
+
     return(
         <div className="content__items">
-            {microgreen.map((u,index)=><ShopItem AddedMicrogreenItems={microgreenItems[u.id]&& microgreenItems[u.id].items.length}  handleAppMicrogreen={onMicrogreenAdd} key={index} {...u}/>)}
+            {microgreen.map((u,index)=><ShopItem AddedMicrogreenItems={microgreenItems[u.id] && AddedMicrogreenItems(u.id)}  handleAppMicrogreen={onMicrogreenAdd} key={index} {...u}/>)}
         </div>
     )
 }

@@ -60,7 +60,7 @@ export const setSelectedSortBy = (SelectedSortBy) =>{
 
 export const getMicrogreen = (category,SelectedSortBy) => {
     return async (dispatch) => {
-        dispatch(toggleIsFetching(true)); //эта херня нужная чтобы включать и выключать анимацию
+        dispatch(toggleIsFetching(true));
         let data = await microgreenAPI.getMicrogreen(category,SelectedSortBy);
         dispatch(toggleIsFetching(false));
         dispatch(setMicrogreen(data));

@@ -3,7 +3,7 @@ import fourItem from "../../../Assets/Img/Home/four-item.jpg";
 import classNames from "classnames";
 export const ProductItem =({imageUrl,name,types,price, id, handleAppMicrogreen,AddedMicrogreenItems})=>{
     const availableSize = [100,200]
-    const[activeSize,setActiveSize] = React.useState(types[0])
+    const[activeSize,setActiveSize] = React.useState( types? types[0]:null)
     const onSelectPrice = (index)=>{
         setActiveSize(index);
     }

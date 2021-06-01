@@ -10,27 +10,45 @@ import {CartEmpty} from "./CartEmpty";
 import {NavLink} from "react-router-dom";
 
 export const Cart =()=>{
+    debugger;
     const {totalPrice,totalCount, items} = useSelector(({cartPage})=>cartPage);
     // достаём итоговую цену, итоговое количество и массив с микрозеленью которую добавили
     const dispatch = useDispatch();
     // создаём диспатч чтобы можно было санки прокидывать
-    const addedMicrogreen = Object.keys(items).map(key=>{return items[key].items[0]})
+    // const addedMicrogreen = Object.keys(items).map(key=>{return items[key].items[0]})
+
+    // const addedMicrogreen1 = Object.keys(items).map(key=>{return items[key]});
+    // const addedMicrogreen = Object.keys(addedMicrogreen1).map(key=>{return addedMicrogreen1[key]})
+    debugger;
+    const addedMicrogreen1 = Object.keys(items).map(key=>{return items[key]});
+    const addedMicrogreen2 = addedMicrogreen1.map( u=> Object.keys(u).map(key=>{return u[key].items[0]}));
+    // const grouoPrice = addedMicrogreen1.map( u=> Object.keys(u).map(key=>{return u[key].totalPrice}));
+
+    let z = [];
+    addedMicrogreen2.forEach((u)=>{
+        u.forEach((x)=>{
+            z.push(x)
+        })
+    })
+    console.log(z)
+
     // достаём из обектов добаленные пиццы и склдываем в массив
     const onClearCart =()=>{
         if(window.confirm("Вы действительно хотите очистить корзину?")){
             dispatch(clearCart());}
     }
-    const onRemoveItem =(id)=>{
+    const onRemoveItem =(id, size)=>{
         if(window.confirm("Вы действительно хотите удалить микрозелень?")){
-            dispatch(removeItem(id));
+            dispatch(removeItem(id, size));
         }
     }
-    const onPlusItem =(id)=>{
-        dispatch(plusCartItem(id));
+    const onPlusItem =(id, size)=>{
+        dispatch(plusCartItem(id, size));
     }
-    const onMinusItem =(id)=>{
-        dispatch(minusCartItem(id));
+    const onMinusItem =(id, size)=>{
+        dispatch(minusCartItem(id, size));
     }
+    debugger;
     return(<div>
 
         {totalCount? <div className="cart">
@@ -39,7 +57,8 @@ export const Cart =()=>{
                 <div className="cart__top-line-clear"><div  className="cart__clear-button" onClick={onClearCart}><img src={del} alt=""/><span > Очистить корзину</span></div></div>
             </div>
             <div className="cart__items">
-                {addedMicrogreen.map(obj=><CartItem  onMinus={onMinusItem} onPlus={onPlusItem} key={`${obj.id}_${obj.name}`}  id={obj.id} onRemove ={onRemoveItem}  imageUrl={obj.imageUrl}  totalCount ={items[obj.id].items.length} name = {obj.name} type={obj.type} size ={obj.size} totalPrice={items[obj.id].totalPrice}/>)}
+                {/*{ addedMicrogreen2.map(obj=><CartItem  onMinus={onMinusItem} onPlus={onPlusItem} key={`${obj.id}_${obj.name}`}  id={obj.id} onRemove ={onRemoveItem}  imageUrl={obj.imageUrl}  totalCount ={items[obj.id].items.length} name = {obj.name} type={obj.type} size ={obj.size} totalPrice={items[obj.id].totalPrice}/>)}*/}
+                { z.map(obj=><CartItem  onMinus={onMinusItem} onPlus={onPlusItem} key={`${obj.id}_${obj.name}`}  id={obj.id} onRemove ={onRemoveItem}  imageUrl={obj.imageUrl}  totalCount ={items[obj.id][obj.size].items.length} name = {obj.name} type={obj.type} size ={obj.size} totalPrice={items[obj.id][obj.size].totalPrice}/>)}
 
             </div>
 
@@ -61,7 +80,7 @@ export const Cart =()=>{
                         </NavLink>
                     </div>
                     <div className="button pay-btn">
-                        <span>Оплатить сейчас</span>
+                        <NavLink to="/order"><span>Оформить заказ</span></NavLink>
                     </div>
                 </div>
             </div>
